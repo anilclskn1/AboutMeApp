@@ -7,12 +7,25 @@
 
 import SwiftUI
 
-struct StoryTab: View {
+struct StoryView: View {
+    //To let your story scroll if the text gets too long, wrap your Text view in a ScrollView.
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("My Story")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+            
+            ScrollView {
+                Text(information.story)
+                    .font(.body)
+                    .padding()
+            }
+        }
+        .padding([.top, .bottom], 50)
     }
 }
 
 #Preview {
-    StoryTab()
+    StoryView()
 }
